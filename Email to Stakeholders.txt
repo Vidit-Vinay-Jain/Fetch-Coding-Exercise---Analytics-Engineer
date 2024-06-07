@@ -1,0 +1,40 @@
+Subject: Data Quality Issues and Analysis Results
+
+Hello Stakeholders,
+
+I wanted to share findings from our recent data analysis and the process used to identify and address data quality issues.
+
+Data Quality Issues:
+1] Missing Values: No critical missing values detected.
+2] Duplicate Records: No duplicates found.
+3] Inconsistent Data: No negative spends or future dates.
+
+Below I have tried my best to answer some of your questions:
+
+1] What questions do you have about the data?
+     - Are there any specific business rules or constraints that we should be aware of while handling the data?
+     - Are there any known limitations or issues with the data collection process?
+
+2] How did you discover the data quality issues?
+     - We used SQL queries to check for missing values, duplicate records, and inconsistent data patterns (example: negative spends, future dates).
+
+3] What do you need to know to resolve the data quality issues?
+     - Understanding acceptable ranges and values for key metrics.
+     - Business rules for handling records with missing critical fields (example: `user_id`, `purchase_date`).
+
+4] What other information would you need to help you optimize the data assets you're trying to create?
+     - Additional context on the data collection process and any known limitations.
+     - Historical data to identify long-term trends and patterns.
+
+5] What performance and scaling concerns do you anticipate in production and how do you plan to address them?
+   i) Concerns:
+        - Handling large volumes of data efficiently.
+        - Ensuring data integrity and consistency during real-time processing.
+   ii) Plans:
+        - Implement indexing on critical fields to improve query performance.
+        - Conduct regular data audits and use automated validation scripts to maintain data quality.
+
+Please let me know if you have any questions or need further details.
+
+Best regards,  
+Vidit

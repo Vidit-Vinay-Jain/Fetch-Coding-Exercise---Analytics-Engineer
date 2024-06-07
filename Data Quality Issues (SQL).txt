@@ -1,0 +1,23 @@
+-- Identify missing values in all tables
+SELECT COUNT(*) AS missing_user_id FROM Users WHERE user_id IS NULL;
+SELECT COUNT(*) AS missing_created_date FROM Users WHERE created_date IS NULL;
+SELECT COUNT(*) AS missing_active FROM Users WHERE active IS NULL;
+
+SELECT COUNT(*) AS missing_receipt_id FROM Receipts WHERE receipt_id IS NULL;
+SELECT COUNT(*) AS missing_user_id FROM Receipts WHERE user_id IS NULL;
+SELECT COUNT(*) AS missing_purchase_date FROM Receipts WHERE purchase_date IS NULL;
+SELECT COUNT(*) AS missing_total_spent FROM Receipts WHERE total_spent IS NULL;
+
+SELECT COUNT(*) AS missing_brand_id FROM Brands WHERE brand_id IS NULL;
+SELECT COUNT(*) AS missing_name FROM Brands WHERE name IS NULL;
+
+
+-- Identify if there are any duplicate records
+SELECT user_id, COUNT(*) AS count FROM Users GROUP BY user_id HAVING COUNT(*) > 1;
+SELECT receipt_id, COUNT(*) AS count FROM Receipts GROUP BY receipt_id HAVING COUNT(*) > 1;
+SELECT brand_id, COUNT(*) AS count FROM Brands GROUP BY brand_id HAVING COUNT(*) > 1;
+
+
+-- Identify Inconsistent Data
+SELECT COUNT(*) AS negative_total_spent FROM Receipts WHERE total_spent < 0;
+SELECT COUNT(*) AS future_purchase_date FROM Receipts WHERE purchase_date > CURRENT_DATE;
